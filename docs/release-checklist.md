@@ -10,7 +10,8 @@ Target: https://github.com/justinbelieber/grounded-ideation-skill (public).
 - [x] Agent inspected provenance, examples and unsupported efficacy claims; see source-audit.md.
 - [x] Offline tests passed; read evaluation.md for NOT_RUN and UNVERIFIED limitations.
 - [x] Final staged-byte scan: 88 files, zero findings; CFF 1.2.0 schema validated.
-- [ ] Verify remote upload and hosted GitHub Actions results.
+- [x] Create the public GitHub repository and local initial commit.
+- [ ] Complete Git authentication, upload commits and verify hosted GitHub Actions.
 
 Recommended human review: inspect all intended files for private ideas, credentials,
 addresses, machine paths, downloaded material, missing notices and unsupported claims.

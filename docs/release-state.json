@@ -1,5 +1,5 @@
 {
-  "status": "PREPARED_FOR_PUBLICATION",
+  "status": "AWAITING_GIT_AUTHENTICATION",
   "maintainer_confirmations": {
     "original_contributions_mit": true,
     "public_handle_only": true,
@@ -13,5 +13,11 @@
     "agent_provenance_and_claims_review": "completed; see source-audit.md and release-scan.md",
     "human_file_by_file_review": "not asserted",
     "legal_clearance": "not asserted"
+  },
+  "publication": {
+    "remote_created": true,
+    "local_commit_created": true,
+    "push_completed": false,
+    "hosted_ci": "NOT_RUN"
   }
 }
