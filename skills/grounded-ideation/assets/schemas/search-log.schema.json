@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "search-log",
+  "type": "object",
+  "properties": {
+    "search_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{0,79}$"
+    },
+    "query": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tool": {
+      "type": "string",
+      "minLength": 1
+    },
+    "at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "filters": {
+      "type": "object"
+    },
+    "regime": {
+      "enum": [
+        "same-problem",
+        "mechanism-transfer",
+        "counterexample"
+      ]
+    },
+    "found_source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "not_found": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "status": {
+      "enum": [
+        "ok",
+        "failed"
+      ]
+    },
+    "error": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "search_id",
+    "query",
+    "tool",
+    "at",
+    "filters",
+    "regime",
+    "found_source_ids",
+    "not_found",
+    "status",
+    "error"
+  ],
+  "additionalProperties": false
+}

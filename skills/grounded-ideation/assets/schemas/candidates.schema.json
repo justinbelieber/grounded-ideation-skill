@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "candidates",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "candidate_id": {
+        "type": "string",
+        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{0,79}$"
+      },
+      "gap_id": {
+        "type": "string",
+        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{0,79}$"
+      },
+      "title": {
+        "type": "string",
+        "minLength": 1
+      },
+      "intuition": {
+        "type": "string",
+        "minLength": 1
+      },
+      "claim_ids": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 0
+      },
+      "source_ids": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 0
+      },
+      "transfer": {
+        "type": "object",
+        "properties": {
+          "source_problem": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_mechanism": {
+            "type": "string",
+            "minLength": 1
+          },
+          "why_source_works": {
+            "type": "string",
+            "minLength": 1
+          },
+          "target_problem": {
+            "type": "string",
+            "minLength": 1
+          },
+          "shared_structure": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required_changes": {
+            "type": "string",
+            "minLength": 1
+          },
+          "conditions": {
+            "type": "string",
+            "minLength": 1
+          },
+          "difference_from_nearest": {
+            "type": "string",
+            "minLength": 1
+          },
+          "failure_mode": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "source_problem",
+          "source_mechanism",
+          "why_source_works",
+          "target_problem",
+          "shared_structure",
+          "required_changes",
+          "conditions",
+          "difference_from_nearest",
+          "failure_mode"
+        ],
+        "additionalProperties": false
+      },
+      "revision": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "status": {
+        "enum": [
+          "proposed",
+          "survive",
+          "revise",
+          "reject",
+          "insufficient_evidence",
+          "stale"
+        ]
+      }
+    },
+    "required": [
+      "candidate_id",
+      "gap_id",
+      "title",
+      "intuition",
+      "claim_ids",
+      "source_ids",
+      "transfer",
+      "revision",
+      "status"
+    ],
+    "additionalProperties": false
+  },
+  "minItems": 0
+}

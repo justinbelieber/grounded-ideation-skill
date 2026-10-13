@@ -1,0 +1,471 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "run",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "skill_version": {
+      "const": "0.1.0"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{0,79}$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "config": {
+      "type": "object",
+      "properties": {
+        "task": {
+          "enum": [
+            "ideate",
+            "audit",
+            "resume"
+          ]
+        },
+        "depth": {
+          "enum": [
+            "quick",
+            "standard",
+            "deep"
+          ]
+        },
+        "literature_mode": {
+          "enum": [
+            "live",
+            "local-only",
+            "retrospective"
+          ]
+        },
+        "profile": {
+          "enum": [
+            "generic",
+            "vla-world-model"
+          ]
+        },
+        "cutoff": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      },
+      "required": [
+        "task",
+        "depth",
+        "literature_mode",
+        "profile",
+        "cutoff"
+      ],
+      "additionalProperties": false
+    },
+    "capabilities": {
+      "type": "object",
+      "properties": {
+        "network_search": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "available",
+                "unavailable",
+                "untested"
+              ]
+            },
+            "tool": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "note": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "tool",
+            "note"
+          ],
+          "additionalProperties": false
+        },
+        "paper_reading": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "available",
+                "unavailable",
+                "untested"
+              ]
+            },
+            "tool": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "note": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "tool",
+            "note"
+          ],
+          "additionalProperties": false
+        },
+        "local_files": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "available",
+                "unavailable",
+                "untested"
+              ]
+            },
+            "tool": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "note": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "tool",
+            "note"
+          ],
+          "additionalProperties": false
+        },
+        "python": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "available",
+                "unavailable",
+                "untested"
+              ]
+            },
+            "tool": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "note": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "tool",
+            "note"
+          ],
+          "additionalProperties": false
+        },
+        "repository_reading": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "available",
+                "unavailable",
+                "untested"
+              ]
+            },
+            "tool": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "note": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "tool",
+            "note"
+          ],
+          "additionalProperties": false
+        },
+        "subagents": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "available",
+                "unavailable",
+                "untested"
+              ]
+            },
+            "tool": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "note": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "tool",
+            "note"
+          ],
+          "additionalProperties": false
+        },
+        "context_isolation": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "available",
+                "unavailable",
+                "untested"
+              ]
+            },
+            "tool": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "note": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "tool",
+            "note"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "network_search",
+        "paper_reading",
+        "local_files",
+        "python",
+        "repository_reading",
+        "subagents",
+        "context_isolation"
+      ],
+      "additionalProperties": false
+    },
+    "execution": {
+      "enum": [
+        "serial",
+        "native-subagents"
+      ]
+    },
+    "budget": {
+      "type": "object",
+      "properties": {
+        "limits": {
+          "type": "object",
+          "properties": {
+            "searches": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "reads": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "candidates": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "revisions": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "concurrency": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "searches",
+            "reads",
+            "candidates",
+            "revisions",
+            "concurrency"
+          ],
+          "additionalProperties": false
+        },
+        "used": {
+          "type": "object",
+          "properties": {
+            "searches": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "reads": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "candidates": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "concurrency": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "searches",
+            "reads",
+            "candidates",
+            "concurrency"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "limits",
+        "used"
+      ],
+      "additionalProperties": false
+    },
+    "stages": {
+      "type": "object",
+      "properties": {
+        "define": {
+          "enum": [
+            "pending",
+            "complete",
+            "stale"
+          ]
+        },
+        "evidence": {
+          "enum": [
+            "pending",
+            "complete",
+            "stale"
+          ]
+        },
+        "gaps": {
+          "enum": [
+            "pending",
+            "complete",
+            "stale"
+          ]
+        },
+        "candidates": {
+          "enum": [
+            "pending",
+            "complete",
+            "stale"
+          ]
+        },
+        "review": {
+          "enum": [
+            "pending",
+            "complete",
+            "stale"
+          ]
+        },
+        "proposal": {
+          "enum": [
+            "pending",
+            "complete",
+            "stale"
+          ]
+        }
+      },
+      "required": [
+        "define",
+        "evidence",
+        "gaps",
+        "candidates",
+        "review",
+        "proposal"
+      ],
+      "additionalProperties": false
+    },
+    "status": {
+      "enum": [
+        "active",
+        "stopped"
+      ]
+    },
+    "stop_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "hashes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    },
+    "control_hash": {
+      "type": "string"
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "at",
+          "summary"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "schema_version",
+    "skill_version",
+    "run_id",
+    "created_at",
+    "updated_at",
+    "config",
+    "capabilities",
+    "execution",
+    "budget",
+    "stages",
+    "status",
+    "stop_reason",
+    "hashes",
+    "control_hash",
+    "decisions"
+  ],
+  "additionalProperties": false
+}

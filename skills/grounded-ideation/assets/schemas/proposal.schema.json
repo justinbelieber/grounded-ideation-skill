@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "proposal",
+  "type": "object",
+  "properties": {
+    "outcome": {
+      "enum": [
+        "pending",
+        "recommend",
+        "no_recommendation"
+      ]
+    },
+    "candidate_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "title": {
+      "type": "string"
+    },
+    "problem": {
+      "type": "string"
+    },
+    "failure_case": {
+      "type": "string"
+    },
+    "hypothesis": {
+      "type": "string"
+    },
+    "contribution": {
+      "type": "string"
+    },
+    "mechanism": {
+      "type": "string"
+    },
+    "implementation": {
+      "type": "string"
+    },
+    "claim_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "experiments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string",
+            "minLength": 1
+          },
+          "intervention": {
+            "type": "string",
+            "minLength": 1
+          },
+          "negative_control": {
+            "type": "string",
+            "minLength": 1
+          },
+          "simple_alternative": {
+            "type": "string",
+            "minLength": 1
+          },
+          "baselines": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "ablations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "metrics": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "expected": {
+            "type": "string",
+            "minLength": 1
+          },
+          "falsifies": {
+            "type": "string",
+            "minLength": 1
+          },
+          "stop_condition": {
+            "type": "string",
+            "minLength": 1
+          },
+          "resource_basis": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "question",
+          "intervention",
+          "negative_control",
+          "simple_alternative",
+          "baselines",
+          "ablations",
+          "metrics",
+          "expected",
+          "falsifies",
+          "stop_condition",
+          "resource_basis"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "next_diagnostics": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "results_status": {
+      "const": "not_executed"
+    }
+  },
+  "required": [
+    "outcome",
+    "candidate_ids",
+    "title",
+    "problem",
+    "failure_case",
+    "hypothesis",
+    "contribution",
+    "mechanism",
+    "implementation",
+    "claim_ids",
+    "experiments",
+    "limitations",
+    "next_diagnostics",
+    "results_status"
+  ],
+  "additionalProperties": false
+}

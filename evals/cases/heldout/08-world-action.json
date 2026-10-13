@@ -1,0 +1,21 @@
+{
+  "case_id": "08-world-action",
+  "split": "heldout",
+  "synthetic": true,
+  "task": "audit",
+  "profile": "vla-world-model",
+  "prompt": "Assess a proposal claiming closed-loop manipulation gains from video prediction quality.",
+  "fixed_corpus": "SYNTHETIC: Only open-loop reconstruction scores exist. Policy actions and feedback are unmeasured. Extra training data differs between methods.",
+  "limits": {
+    "searches": 6,
+    "reads": 4,
+    "candidates": 1,
+    "revisions": 1,
+    "concurrency": 1
+  },
+  "results": {
+    "A": "NOT_RUN",
+    "B": "NOT_RUN",
+    "C": "NOT_RUN"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "generic",
+  "excluded_directions": [],
+  "defaults": {
+    "quick": {
+      "searches": 6,
+      "reads": 4,
+      "candidates": 1,
+      "revisions": 1,
+      "concurrency": 1
+    },
+    "standard": {
+      "searches": 18,
+      "reads": 12,
+      "candidates": 3,
+      "revisions": 2,
+      "concurrency": 2
+    },
+    "deep": {
+      "searches": 30,
+      "reads": 20,
+      "candidates": 3,
+      "revisions": 2,
+      "concurrency": 3
+    }
+  }
+}

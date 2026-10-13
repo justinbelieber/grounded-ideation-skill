@@ -1,0 +1,21 @@
+{
+  "case_id": "02-missing-gap",
+  "split": "dev",
+  "synthetic": true,
+  "task": "ideate",
+  "profile": "generic",
+  "prompt": "Develop an idea for a claimed calibration failure that has not been measured.",
+  "fixed_corpus": "SYNTHETIC: Only aggregate accuracy is reported. No calibration or subgroup measurements are supplied.",
+  "limits": {
+    "searches": 6,
+    "reads": 4,
+    "candidates": 1,
+    "revisions": 1,
+    "concurrency": 1
+  },
+  "results": {
+    "A": "NOT_RUN",
+    "B": "NOT_RUN",
+    "C": "NOT_RUN"
+  }
+}

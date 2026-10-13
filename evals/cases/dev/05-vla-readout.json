@@ -1,0 +1,21 @@
+{
+  "case_id": "05-vla-readout",
+  "split": "dev",
+  "synthetic": true,
+  "task": "ideate",
+  "profile": "vla-world-model",
+  "prompt": "Find a feasible test of whether a frozen visual representation controls the action policy.",
+  "fixed_corpus": "SYNTHETIC: A linear probe predicts object identity. There are no intervention or closed-loop data. Hardware is unspecified.",
+  "limits": {
+    "searches": 6,
+    "reads": 4,
+    "candidates": 1,
+    "revisions": 1,
+    "concurrency": 1
+  },
+  "results": {
+    "A": "NOT_RUN",
+    "B": "NOT_RUN",
+    "C": "NOT_RUN"
+  }
+}

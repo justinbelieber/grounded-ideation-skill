@@ -1,0 +1,26 @@
+{
+  "problem": "Audit whether a staged gap/transfer/proposal workflow alone is a new scientific ideation mechanism.",
+  "challenge": [
+    "Check closest existing method before claiming a contribution"
+  ],
+  "domain": "machine learning",
+  "seed_sources": [
+    "https://arxiv.org/abs/2610.04074v1"
+  ],
+  "existing_ideas": [
+    "Use gap finding, mechanism transfer and proposal writing as a novel ideation mechanism."
+  ],
+  "target_contribution": "A falsifiable mechanism or a justified diagnostic.",
+  "constraints": {
+    "data": [],
+    "code": [],
+    "hardware": null,
+    "time": null,
+    "other": [
+      "Use a bounded literature budget."
+    ]
+  },
+  "excluded_directions": [],
+  "language": "en",
+  "output_directory": "runs"
+}

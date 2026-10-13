@@ -1,0 +1,10 @@
+[project]
+name = "grounded-ideation-skill"
+version = "0.1.0"
+description = "Evidence-grounded scientific ideation artifacts for Codex"
+requires-python = ">=3.10"
+dependencies = ["jsonschema>=4.23,<5"]
+# Distribution is a skill folder, not a pip package. License is pending review.
+
+[project.optional-dependencies]
+test = ["PyYAML>=6,<7"]

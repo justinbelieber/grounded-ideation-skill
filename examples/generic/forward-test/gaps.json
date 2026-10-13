@@ -1,0 +1,19 @@
+[
+  {
+    "gap_id": "gap-keyed-reuse",
+    "axis": "Check whether keyed feature reuse is already present",
+    "statement": "The proposed absence of keyed deterministic-feature reuse is contradicted within the supplied corpus.",
+    "status": "rejected",
+    "claim_ids": [
+      "claim-prior-operation",
+      "claim-renaming"
+    ],
+    "near_miss_source_ids": [
+      "synthetic-corpus-1"
+    ],
+    "near_miss_explanation": "Only one source exists in the allowed corpus. It is an exact operational match, not a true near-miss; no second paper is invented.",
+    "importance": "Avoid presenting an existing operation under a new label as a research mechanism.",
+    "observable_resolution": "The supplied Paragraph 1 already describes the required keyed storage and reuse.",
+    "diagnostic": "Document any operation beyond keyed memoization; otherwise abandon the novelty claim."
+  }
+]

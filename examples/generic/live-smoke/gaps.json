@@ -1,0 +1,18 @@
+[
+  {
+    "gap_id": "role-flow-gap",
+    "axis": "Grounded ideation mechanism",
+    "statement": "The claimed absence of this role sequence is contradicted by the inspected primary source.",
+    "status": "rejected",
+    "claim_ids": [
+      "prior-role-flow"
+    ],
+    "near_miss_source_ids": [
+      "ideascientist-v1"
+    ],
+    "near_miss_explanation": "One decisive source is sufficient to reject this narrow novelty claim.",
+    "importance": "Avoid presenting workflow repackaging as a new research mechanism.",
+    "observable_resolution": "A concrete operation absent from the nearest existing method would require a new audit.",
+    "diagnostic": "Specify a substantive mechanism difference before further research investment."
+  }
+]

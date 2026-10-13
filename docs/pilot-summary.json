@@ -1,0 +1,74 @@
+{
+  "test_type": "Synthetic local-only developer smoke test; not scientific efficacy evaluation",
+  "outcome": "Completed saved run and CLI-rendered report. Reject renaming as a novel mechanism within the supplied corpus; no candidate selected; conditional diagnostic retained, not executed.",
+  "scope": "Only provided brief, corpus, skill-local instructions/schemas/helper source and this run were read. No network, agents, external mutations or installed-skill changes.",
+  "entry_point": "Explicit SKILL.md path. Host skill auto-discovery was not tested.",
+  "tool_counts": {
+    "functions.exec_calls": 11,
+    "nested_tools.exec_command_calls": 11,
+    "relationship": "Each functions.exec call contains one exec_command call; these are two layers of the same eleven shell interactions.",
+    "artifact_cli_invocations": 8,
+    "corpus_searches": 2,
+    "full_corpus_reads": 1,
+    "candidates": 1,
+    "revisions": 0,
+    "peak_research_concurrency": 1
+  },
+  "cli_commands": [
+    "research_artifacts.py --help",
+    "research_artifacts.py init --help",
+    "research_artifacts.py init --workspace runs --run-id pilot --brief brief.json --task audit --depth quick --literature-mode local-only --profile generic",
+    "research_artifacts.py update --run runs/pilot --input runs/pilot/update.json",
+    "research_artifacts.py validate --run runs/pilot",
+    "research_artifacts.py audit --run runs/pilot",
+    "research_artifacts.py audit --run runs/pilot --require-recommendable",
+    "research_artifacts.py render --run runs/pilot"
+  ],
+  "results": {
+    "all_stages": "complete",
+    "status": "stopped",
+    "stop_reason": "all_rejected",
+    "validate_exit": 0,
+    "audit_exit": 0,
+    "audit_require_recommendable_exit": 2,
+    "render_exit": 0,
+    "structure": "PASS",
+    "recommendation_gate": "BLOCKED (expected)",
+    "semantic_truth": "NOT_AUTOMATICALLY_VERIFIED"
+  },
+  "errors": [
+    "No unexpected command failure or stderr. --require-recommendable returned expected exit 2 for the valid no-recommendation synthetic run."
+  ],
+  "usability_obstacles": [
+    "Building a complete rejected-candidate run required reading eight schemas and manually constructing a substantial update bundle; the small template covers only a minimal no-recommendation proposal.",
+    "The renderer prints experiment array fields as Python-style list strings with escaped HTML quote entities (for example &\\#x27;), reducing report readability. This was observed in report.md, not edited.",
+    "The gate labels critical synthetic-content statements unsupported even when their exact fixture text is verified. This correctly blocks recommendation, but the generic blocker does not explain the synthetic-source restriction."
+  ],
+  "review_limits": [
+    "Same-context self-review only.",
+    "Markdown report generated and read as text; no UI/browser visual preview.",
+    "Source contents copied into review-input.json for an inspectable hashed review packet.",
+    "No efficacy, real novelty, skill auto-discovery or isolation claim follows from this test."
+  ],
+  "artifacts": [
+    "run.json",
+    "brief.json",
+    "search-log.jsonl",
+    "sources.jsonl",
+    "claims.jsonl",
+    "gaps.json",
+    "candidates.json",
+    "reviews.json",
+    "proposal.json",
+    "report.md",
+    "review-input.json",
+    "update.json",
+    "cli-checks.json",
+    "validate.json",
+    "audit.json",
+    "audit-recommendable.json",
+    "render.json",
+    "smoke-test-summary.json"
+  ],
+  "post_pilot_revision": "Added a complete installed synthetic template, improved list rendering and clarified synthetic gate messages. Re-rendered the same saved run; no second model run."
+}

@@ -1,0 +1,28 @@
+{
+  "artifacts": {
+    "proposal.json": {
+      "outcome": "no_recommendation",
+      "candidate_ids": [],
+      "title": "Evidence not sufficient",
+      "problem": "The existence of the failure remains unverified.",
+      "failure_case": "",
+      "hypothesis": "",
+      "contribution": "",
+      "mechanism": "",
+      "implementation": "",
+      "claim_ids": [],
+      "experiments": [],
+      "limitations": [
+        "No source evidence supplied."
+      ],
+      "next_diagnostics": [
+        "Verify the problem before proposing a mechanism."
+      ],
+      "results_status": "not_executed"
+    }
+  },
+  "run": {
+    "status": "stopped",
+    "stop_reason": "insufficient_evidence"
+  }
+}

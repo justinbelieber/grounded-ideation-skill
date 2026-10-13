@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "sources",
+  "type": "object",
+  "properties": {
+    "source_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{0,79}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "identifier": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "url": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "published_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "version_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "accessed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_type": {
+      "enum": [
+        "paper",
+        "repository",
+        "dataset",
+        "documentation",
+        "synthetic"
+      ]
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "existence": {
+      "enum": [
+        "verified",
+        "unverified",
+        "failed"
+      ]
+    },
+    "existence_method": {
+      "type": "string"
+    },
+    "reading_status": {
+      "enum": [
+        "unread",
+        "abstract_only",
+        "targeted_full_text",
+        "full_text"
+      ]
+    },
+    "read_scope": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "source_id",
+    "title",
+    "identifier",
+    "url",
+    "authors",
+    "version",
+    "published_date",
+    "version_date",
+    "accessed_at",
+    "source_type",
+    "synthetic",
+    "existence",
+    "existence_method",
+    "reading_status",
+    "read_scope",
+    "limitations"
+  ],
+  "additionalProperties": false
+}

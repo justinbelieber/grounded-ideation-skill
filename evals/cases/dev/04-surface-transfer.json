@@ -1,0 +1,21 @@
+{
+  "case_id": "04-surface-transfer",
+  "split": "dev",
+  "synthetic": true,
+  "task": "audit",
+  "profile": "generic",
+  "prompt": "Evaluate importing a biological immune metaphor into an anomaly detector.",
+  "fixed_corpus": "SYNTHETIC: The candidate names immunity but specifies only an existing threshold detector, with no shared mathematical structure or adaptation.",
+  "limits": {
+    "searches": 6,
+    "reads": 4,
+    "candidates": 1,
+    "revisions": 1,
+    "concurrency": 1
+  },
+  "results": {
+    "A": "NOT_RUN",
+    "B": "NOT_RUN",
+    "C": "NOT_RUN"
+  }
+}

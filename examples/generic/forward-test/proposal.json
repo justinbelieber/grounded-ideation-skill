@@ -1,0 +1,54 @@
+{
+  "outcome": "no_recommendation",
+  "candidate_ids": [],
+  "title": "Reject renaming as a new mechanism within the synthetic corpus",
+  "problem": "Reduce repeated deterministic feature computation. The supplied synthetic prior already includes keyed reuse (claim-prior-operation).",
+  "failure_case": "A missing keyed-reuse capability is not established; the matching operation is already described in Paragraph 1.",
+  "hypothesis": "The stated feature-memory idea is operationally equivalent to the described memoization; this is a description-level inference, not an executed result (claim-renaming).",
+  "contribution": "No new research mechanism is justified by this audit. Preserve the rejection and a conditional equivalence diagnostic.",
+  "mechanism": "No selected candidate. The rejected idea uses the same keyed store-and-reuse mechanism as the synthetic prior.",
+  "implementation": "No experiment or implementation was executed. If code becomes available, first compare exact operations and encoder-call traces.",
+  "claim_ids": [
+    "claim-prior-operation",
+    "claim-renaming",
+    "claim-no-evaluation",
+    "claim-diagnostic"
+  ],
+  "experiments": [
+    {
+      "question": "Does any supplied implementation add an operation beyond ordinary keyed memoization?",
+      "intervention": "If implementation access becomes available, run the proposed implementation and ordinary memoization with a fixed deterministic encoder and identical key semantics.",
+      "negative_control": "Use an all-distinct-key sequence, where repeated-key reuse cannot explain an advantage.",
+      "simple_alternative": "Ordinary keyed memoization.",
+      "baselines": [
+        "Uncached deterministic encoder",
+        "Ordinary keyed memoization with matched capacity and keys"
+      ],
+      "ablations": [
+        "Disable reuse while keeping the same encoder and key lookup code."
+      ],
+      "metrics": [
+        "Feature equality",
+        "Encoder invocation count",
+        "Cache hit and miss trace"
+      ],
+      "expected": "A pure rename is predicted to produce the same outputs and encoder-call trace as ordinary memoization under matched conditions. No result is measured.",
+      "falsifies": "A reproducible additional operation and a trace difference under matched conditions would falsify strict operational equivalence and justify a revised audit.",
+      "stop_condition": "Abandon the novelty claim if descriptions and matched traces are equivalent. Do not launch a full evaluation without a distinct operation and a demonstrated problem.",
+      "resource_basis": "Code and hardware are not supplied. This conditional diagnostic requires only a small repeated-key and all-distinct-key input set; runtime and resource needs remain unknown."
+    }
+  ],
+  "limitations": [
+    "Synthetic developer smoke test; not a scientific efficacy evaluation.",
+    "Only corpus.txt was used as research evidence; no real publications, results or comprehensive novelty coverage.",
+    "Serial same-context self-review is not independent validation.",
+    "No implementation, workload, hardware access or measured bottleneck is established.",
+    "The corpus injection was ignored as data."
+  ],
+  "next_diagnostics": [
+    "Stop the current renaming candidate; require an explicit consequential operation before reopening its novelty claim.",
+    "If the practical compute problem remains relevant, first obtain an authorized workload and measure repetition frequency and encoder cost; this corpus cannot establish that need.",
+    "Keep any future equivalence test separate from claims of improved performance."
+  ],
+  "results_status": "not_executed"
+}

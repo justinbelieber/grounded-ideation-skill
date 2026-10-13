@@ -1,0 +1,4 @@
+interface:
+  display_name: "Grounded Ideation"
+  short_description: "Evidence-grounded scientific ideas and audits"
+  default_prompt: "Use $grounded-ideation to audit my research idea and propose a falsifiable next experiment."

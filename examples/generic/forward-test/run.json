@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "skill_version": "0.1.0",
+  "run_id": "pilot",
+  "created_at": "2026-10-13T08:28:19.362795Z",
+  "updated_at": "2026-10-13T08:31:04.311446Z",
+  "config": {
+    "task": "audit",
+    "depth": "quick",
+    "literature_mode": "local-only",
+    "profile": "generic",
+    "cutoff": null
+  },
+  "capabilities": {
+    "network_search": {
+      "status": "untested",
+      "tool": null,
+      "note": "Network was prohibited by the test. No network probe or request was made."
+    },
+    "paper_reading": {
+      "status": "available",
+      "tool": "functions.exec -> tools.exec_command -> cat corpus.txt",
+      "note": "Local plaintext reading was demonstrated. Real-paper/PDF reading remains untested; only a synthetic fixture was read."
+    },
+    "local_files": {
+      "status": "available",
+      "tool": "functions.exec -> tools.exec_command",
+      "note": "Read explicit skill, brief and corpus paths; initialized runs/pilot. This does not test skill auto-discovery."
+    },
+    "python": {
+      "status": "available",
+      "tool": "python (test virtual environment; path redacted)",
+      "note": "Python 3.12.14 returned; research_artifacts.py --help and init succeeded with existing dependencies."
+    },
+    "repository_reading": {
+      "status": "untested",
+      "tool": null,
+      "note": "Other repository reading prohibited. Only supplied skill files and test inputs were inspected."
+    },
+    "subagents": {
+      "status": "untested",
+      "tool": null,
+      "note": "Other agents prohibited in this test; no worker was spawned."
+    },
+    "context_isolation": {
+      "status": "untested",
+      "tool": null,
+      "note": "No isolated review probe; all research stages used this same context."
+    }
+  },
+  "execution": "serial",
+  "budget": {
+    "limits": {
+      "searches": 6,
+      "reads": 4,
+      "candidates": 1,
+      "revisions": 1,
+      "concurrency": 1
+    },
+    "used": {
+      "searches": 2,
+      "reads": 1,
+      "candidates": 1,
+      "concurrency": 1
+    }
+  },
+  "stages": {
+    "define": "complete",
+    "evidence": "complete",
+    "gaps": "complete",
+    "candidates": "complete",
+    "review": "complete",
+    "proposal": "complete"
+  },
+  "status": "stopped",
+  "stop_reason": "all_rejected",
+  "hashes": {
+    "brief.json": "715335f1fb2a2b4a330a5cefeb8fe5ee5d90f92465eef38e453ad4a273febc3d",
+    "search-log.jsonl": "de640d0213fbe1db85d7adf83c0c3e0daa56b6525d4b47eaffaa032c54199992",
+    "sources.jsonl": "9b6d4541b4c915ad67dc11fcb0638dff8831a59c68b37e2970cadd94848ebc2f",
+    "claims.jsonl": "d8a662b55d995a85ac37b04c51fc69a624e4d0d4b4deeabd53bb56b6e14f420a",
+    "gaps.json": "f2e56d8b65f55831b7cc73c236c2eba28c1b0742a3f718731c709d6fb3f5b369",
+    "candidates.json": "d2d0b1c0c475b950ce7ca6af5c1556639f170f77372b0364a5c34e969cc9c86e",
+    "reviews.json": "71cc12a72156b4bde9f15ef63372781522a0f73d450210e578f89002bcac9914",
+    "proposal.json": "ffef6ed34bcc01723f4de9c17a01ab35a5110df60aa59de89fccc503a5b97375"
+  },
+  "control_hash": "b8c2446e665b5a81e203ddde1329db8fd42528daff2dc8a19522f8a4d8a0e420",
+  "decisions": [
+    {
+      "at": "2026-10-13T08:31:04.268607Z",
+      "summary": "Single-writer update: brief.json, candidates.json, claims.jsonl, gaps.json, proposal.json, reviews.json, search-log.jsonl, sources.jsonl"
+    }
+  ]
+}

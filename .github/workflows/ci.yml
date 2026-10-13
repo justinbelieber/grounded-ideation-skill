@@ -1,0 +1,21 @@
+name: offline-checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.10', '3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install dependencies (network required only here)
+        run: python -m pip install -r skills/grounded-ideation/requirements.txt 'PyYAML>=6,<7'
+      - name: Offline tests (no model, network retrieval, account, GPU or API key)
+        run: python -m unittest discover -s tests -v

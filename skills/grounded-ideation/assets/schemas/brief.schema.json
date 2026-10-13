@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "brief",
+  "type": "object",
+  "properties": {
+    "problem": {
+      "type": "string",
+      "minLength": 1
+    },
+    "challenge": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "domain": {
+      "type": "string",
+      "minLength": 1
+    },
+    "seed_sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "existing_ideas": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "target_contribution": {
+      "type": "string"
+    },
+    "constraints": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "code": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "hardware": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "time": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "other": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "data",
+        "code",
+        "hardware",
+        "time",
+        "other"
+      ],
+      "additionalProperties": false
+    },
+    "excluded_directions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "language": {
+      "type": "string",
+      "minLength": 1
+    },
+    "output_directory": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "problem",
+    "challenge",
+    "domain",
+    "seed_sources",
+    "existing_ideas",
+    "target_contribution",
+    "constraints",
+    "excluded_directions",
+    "language",
+    "output_directory"
+  ],
+  "additionalProperties": false
+}

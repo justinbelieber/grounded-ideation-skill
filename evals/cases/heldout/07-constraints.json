@@ -1,0 +1,21 @@
+{
+  "case_id": "07-constraints",
+  "split": "heldout",
+  "synthetic": true,
+  "task": "ideate",
+  "profile": "generic",
+  "prompt": "Design a falsifiable experiment under a two-hour CPU-only budget and no new datasets.",
+  "fixed_corpus": "SYNTHETIC: Existing logs record input IDs, prediction probabilities and labels. No trained-model weights are supplied.",
+  "limits": {
+    "searches": 6,
+    "reads": 4,
+    "candidates": 1,
+    "revisions": 1,
+    "concurrency": 1
+  },
+  "results": {
+    "A": "NOT_RUN",
+    "B": "NOT_RUN",
+    "C": "NOT_RUN"
+  }
+}

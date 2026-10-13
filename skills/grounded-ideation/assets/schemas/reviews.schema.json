@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "reviews",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "review_id": {
+        "type": "string",
+        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{0,79}$"
+      },
+      "candidate_id": {
+        "type": "string",
+        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{0,79}$"
+      },
+      "revision": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "verdict": {
+        "enum": [
+          "survive",
+          "revise",
+          "reject",
+          "insufficient_evidence"
+        ]
+      },
+      "tool_status": {
+        "enum": [
+          "ok",
+          "failed",
+          "not_used"
+        ]
+      },
+      "claim_ids": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 0
+      },
+      "search_ids": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 0
+      },
+      "strongest_objection": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uncertainties": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 0
+      },
+      "next_discriminator": {
+        "type": "string",
+        "minLength": 1
+      },
+      "isolation": {
+        "enum": [
+          "same-context",
+          "separate-context",
+          "proposal-blind"
+        ]
+      },
+      "history_inherited": {
+        "type": "boolean"
+      },
+      "input_artifacts": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 0
+      },
+      "input_hash": {
+        "type": "string",
+        "minLength": 1
+      },
+      "reviewer": {
+        "type": "string",
+        "minLength": 1
+      },
+      "non_obviousness": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "enum": [
+              "not_requested",
+              "unscored",
+              "scored"
+            ]
+          },
+          "frozen_file": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "frozen_sha256": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "frozen_file",
+          "frozen_sha256",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "required": [
+      "review_id",
+      "candidate_id",
+      "revision",
+      "verdict",
+      "tool_status",
+      "claim_ids",
+      "search_ids",
+      "strongest_objection",
+      "uncertainties",
+      "next_discriminator",
+      "isolation",
+      "history_inherited",
+      "input_artifacts",
+      "input_hash",
+      "reviewer",
+      "non_obviousness"
+    ],
+    "additionalProperties": false
+  },
+  "minItems": 0
+}

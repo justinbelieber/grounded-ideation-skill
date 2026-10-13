@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "claims",
+  "type": "object",
+  "properties": {
+    "claim_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{0,79}$"
+    },
+    "statement": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "enum": [
+        "fact",
+        "inference",
+        "hypothesis",
+        "proposed_test",
+        "unsupported"
+      ]
+    },
+    "critical": {
+      "type": "boolean"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{0,79}$"
+          },
+          "relation": {
+            "enum": [
+              "supports",
+              "contradicts"
+            ]
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "paraphrase": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 1
+          },
+          "requires_full_text": {
+            "type": "boolean"
+          },
+          "relevance": {
+            "enum": [
+              "verified",
+              "unverified",
+              "failed"
+            ]
+          },
+          "support": {
+            "enum": [
+              "verified",
+              "unverified",
+              "failed"
+            ]
+          },
+          "checked_by": {
+            "type": "string",
+            "minLength": 1
+          },
+          "checked_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "method": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "source_id",
+          "relation",
+          "locator",
+          "paraphrase",
+          "scope",
+          "requires_full_text",
+          "relevance",
+          "support",
+          "checked_by",
+          "checked_at",
+          "method"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "result_origin": {
+      "enum": [
+        "none",
+        "prior_work",
+        "proposed",
+        "new_measured"
+      ]
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "claim_id",
+    "statement",
+    "kind",
+    "critical",
+    "evidence",
+    "conditions",
+    "result_origin",
+    "limitations"
+  ],
+  "additionalProperties": false
+}

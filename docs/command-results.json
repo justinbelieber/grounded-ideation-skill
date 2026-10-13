@@ -1,0 +1,113 @@
+[
+  {
+    "command": [
+      ".venv/bin/python",
+      "skills/grounded-ideation/scripts/research_artifacts.py",
+      "--help"
+    ],
+    "expected_exit": 0,
+    "exit_code": 0,
+    "stdout": "usage: research_artifacts.py [-h]\n                             {init,validate,audit,render,resume,update} ...\n\nOffline artifact bookkeeping. No network, model calls, or shell execution.\n\npositional arguments:\n  {init,validate,audit,render,resume,update}\n    init                Create a new run without overwriting anything\n    validate            Check structure, IDs, hashes and recorded quality\n                        prerequisites\n    audit               Separate deterministic checks from semantic\n                        verification\n    render              Render inert Markdown from structured artifacts\n    resume              Detect changed inputs and invalidate dependent\n                        conclusions\n    update              Merge an explicit single-writer JSON bundle\n\noptions:\n  -h, --help            show this help message and exit\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "skills/grounded-ideation/scripts/research_artifacts.py",
+      "init",
+      "--workspace",
+      "runs",
+      "--run-id",
+      "offline-demo",
+      "--brief",
+      "examples/generic/brief.json",
+      "--task",
+      "audit"
+    ],
+    "expected_exit": 0,
+    "exit_code": 0,
+    "stdout": "{\n  \"run_id\": \"offline-demo\",\n  \"status\": \"initialized\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "skills/grounded-ideation/scripts/research_artifacts.py",
+      "update",
+      "--run",
+      "runs/offline-demo",
+      "--input",
+      "examples/generic/rejected-update.json"
+    ],
+    "expected_exit": 0,
+    "exit_code": 0,
+    "stdout": "{\n  \"structure\": {\n    \"status\": \"PASS\",\n    \"errors\": []\n  },\n  \"recommendation_gate\": {\n    \"status\": \"BLOCKED\",\n    \"blockers\": [\n      \"no candidate recommended\",\n      \"unsupported critical claim (synthetic, unverified or inadequate evidence): synthetic-claim-1\"\n    ]\n  },\n  \"semantic_truth\": {\n    \"status\": \"NOT_AUTOMATICALLY_VERIFIED\",\n    \"note\": \"Existence, relevance and support are recorded attestations; schema and hashes cannot prove them.\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "skills/grounded-ideation/scripts/research_artifacts.py",
+      "validate",
+      "--run",
+      "runs/offline-demo"
+    ],
+    "expected_exit": 0,
+    "exit_code": 0,
+    "stdout": "{\n  \"structure\": {\n    \"status\": \"PASS\",\n    \"errors\": []\n  },\n  \"recommendation_gate\": {\n    \"status\": \"BLOCKED\",\n    \"blockers\": [\n      \"no candidate recommended\",\n      \"unsupported critical claim (synthetic, unverified or inadequate evidence): synthetic-claim-1\"\n    ]\n  },\n  \"semantic_truth\": {\n    \"status\": \"NOT_AUTOMATICALLY_VERIFIED\",\n    \"note\": \"Existence, relevance and support are recorded attestations; schema and hashes cannot prove them.\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "skills/grounded-ideation/scripts/research_artifacts.py",
+      "audit",
+      "--run",
+      "runs/offline-demo"
+    ],
+    "expected_exit": 0,
+    "exit_code": 0,
+    "stdout": "{\n  \"structure\": {\n    \"status\": \"PASS\",\n    \"errors\": []\n  },\n  \"recommendation_gate\": {\n    \"status\": \"BLOCKED\",\n    \"blockers\": [\n      \"no candidate recommended\",\n      \"unsupported critical claim (synthetic, unverified or inadequate evidence): synthetic-claim-1\"\n    ]\n  },\n  \"semantic_truth\": {\n    \"status\": \"NOT_AUTOMATICALLY_VERIFIED\",\n    \"note\": \"Existence, relevance and support are recorded attestations; schema and hashes cannot prove them.\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "skills/grounded-ideation/scripts/research_artifacts.py",
+      "render",
+      "--run",
+      "runs/offline-demo"
+    ],
+    "expected_exit": 0,
+    "exit_code": 0,
+    "stdout": "{\n  \"status\": \"rendered\",\n  \"file\": \"report.md\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "skills/grounded-ideation/scripts/research_artifacts.py",
+      "resume",
+      "--run",
+      "runs/offline-demo"
+    ],
+    "expected_exit": 0,
+    "exit_code": 0,
+    "stdout": "{\n  \"structure\": {\n    \"status\": \"PASS\",\n    \"errors\": []\n  },\n  \"recommendation_gate\": {\n    \"status\": \"BLOCKED\",\n    \"blockers\": [\n      \"no candidate recommended\",\n      \"unsupported critical claim (synthetic, unverified or inadequate evidence): synthetic-claim-1\"\n    ]\n  },\n  \"semantic_truth\": {\n    \"status\": \"NOT_AUTOMATICALLY_VERIFIED\",\n    \"note\": \"Existence, relevance and support are recorded attestations; schema and hashes cannot prove them.\"\n  },\n  \"resume\": {\n    \"changed\": [],\n    \"next_stages\": []\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "skills/grounded-ideation/scripts/research_artifacts.py",
+      "audit",
+      "--run",
+      "runs/offline-demo",
+      "--require-recommendable"
+    ],
+    "expected_exit": 2,
+    "exit_code": 2,
+    "stdout": "{\n  \"structure\": {\n    \"status\": \"PASS\",\n    \"errors\": []\n  },\n  \"recommendation_gate\": {\n    \"status\": \"BLOCKED\",\n    \"blockers\": [\n      \"no candidate recommended\",\n      \"unsupported critical claim (synthetic, unverified or inadequate evidence): synthetic-claim-1\"\n    ]\n  },\n  \"semantic_truth\": {\n    \"status\": \"NOT_AUTOMATICALLY_VERIFIED\",\n    \"note\": \"Existence, relevance and support are recorded attestations; schema and hashes cannot prove them.\"\n  }\n}\n",
+    "stderr": ""
+  }
+]

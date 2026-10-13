@@ -1,0 +1,46 @@
+{
+  "frozen_at": "2026-10-13",
+  "cases": [
+    {
+      "path": "cases/dev/01-renamed-cache.json",
+      "sha256": "7eb445256a86e148f8575dc90984ef7b3486c8aff8ce1b1ab23fd23fc3e802fb"
+    },
+    {
+      "path": "cases/dev/02-missing-gap.json",
+      "sha256": "e4abf4255f96678f3364fa5581ff6d52d06a0b509199cac33ae6a9dd11a5d66d"
+    },
+    {
+      "path": "cases/dev/03-tool-failure.json",
+      "sha256": "7f29826f0b8d9e6d11e4d6be6d33bd036412d8b4e91dbc5c8cc0e88338993155"
+    },
+    {
+      "path": "cases/dev/04-surface-transfer.json",
+      "sha256": "d7151773a6241f3a73654e62ff774f01505430ade25751771b8eccdfe20caa20"
+    },
+    {
+      "path": "cases/dev/05-vla-readout.json",
+      "sha256": "e274f408a5ce88f00d807d11f5b68664e29834d4456aa57ea82bbf3ed7c47c45"
+    },
+    {
+      "path": "cases/dev/06-version-cutoff.json",
+      "sha256": "96a1a825ce24d62f574cfe0b926a3eabbe1a4a316e5ac77e48c03140c9a6f535"
+    },
+    {
+      "path": "cases/heldout/07-constraints.json",
+      "sha256": "4e8669cc1275cc18604990468a7876c6c7d8d7a0e07d0765a6c04a50180ebff2"
+    },
+    {
+      "path": "cases/heldout/08-world-action.json",
+      "sha256": "dd9ac0c0e99fb86623ec070338827002b9f0cd6af69c79986554bc67e4f8a960"
+    },
+    {
+      "path": "cases/heldout/09-injection.json",
+      "sha256": "d258d472fa3a2ccea2736d92560e0db7908bd2168f5801e2c1e3136839e570e4"
+    },
+    {
+      "path": "cases/heldout/10-blindness.json",
+      "sha256": "d9894bfdf989303d15ef9822b0231df3048ad39ae7aa59276fc99cce66159f8b"
+    }
+  ],
+  "note": "Execution holdout only. Task authors have seen prompts; an external maintainer should create sealed target answers. No test outcomes have been used for tuning."
+}

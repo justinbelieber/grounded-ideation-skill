@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "gaps",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "gap_id": {
+        "type": "string",
+        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{0,79}$"
+      },
+      "axis": {
+        "type": "string",
+        "minLength": 1
+      },
+      "statement": {
+        "type": "string",
+        "minLength": 1
+      },
+      "status": {
+        "enum": [
+          "grounded",
+          "hypothetical",
+          "rejected"
+        ]
+      },
+      "claim_ids": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 0
+      },
+      "near_miss_source_ids": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 0
+      },
+      "near_miss_explanation": {
+        "type": "string",
+        "minLength": 1
+      },
+      "importance": {
+        "type": "string",
+        "minLength": 1
+      },
+      "observable_resolution": {
+        "type": "string",
+        "minLength": 1
+      },
+      "diagnostic": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "required": [
+      "gap_id",
+      "axis",
+      "statement",
+      "status",
+      "claim_ids",
+      "near_miss_source_ids",
+      "near_miss_explanation",
+      "importance",
+      "observable_resolution",
+      "diagnostic"
+    ],
+    "additionalProperties": false
+  },
+  "minItems": 0
+}

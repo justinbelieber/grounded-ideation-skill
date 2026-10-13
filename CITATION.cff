@@ -1,0 +1,52 @@
+cff-version: 1.2.0
+message: "Please cite this software and its separately credited method inspiration when relevant."
+authors:
+  - family-names: justinbelieber
+    alias: justinbelieber
+repository-code: "https://github.com/justinbelieber/grounded-ideation-skill"
+license: MIT
+title: "grounded-ideation-skill"
+type: software
+version: 0.1.0
+references:
+  - type: article
+    title: "IdeaScientist: Orchestrating Agents for Grounded Scientific Ideation"
+    authors:
+      - family-names: Liu
+        given-names: Jiarui
+      - family-names: Tao
+        given-names: Renjie
+      - family-names: Liao
+        given-names: Yiwei
+      - family-names: Jin
+        given-names: Chuanyang
+      - family-names: Sun
+        given-names: Kai
+      - family-names: Yang
+        given-names: Xiao
+      - family-names: Zhang
+        given-names: Xinyuan
+      - family-names: Chen
+        given-names: Xilun
+      - family-names: Huang
+        given-names: Zhuangqun
+      - family-names: Zhang
+        given-names: Lechen
+      - family-names: Yang
+        given-names: Yongjin
+      - family-names: He
+        given-names: Yinghui
+      - family-names: Xuan
+        given-names: Weihao
+      - family-names: Wanga
+        given-names: Rakesh
+      - family-names: Kumar
+        given-names: Anuj
+      - family-names: Diab
+        given-names: Mona T.
+      - family-names: Yih
+        given-names: Wen-tau
+      - family-names: Dong
+        given-names: Xin Luna
+    year: 2026
+    url: "https://arxiv.org/abs/2610.04074v1"

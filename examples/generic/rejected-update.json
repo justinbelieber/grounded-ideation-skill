@@ -1,0 +1,184 @@
+{
+  "artifacts": {
+    "search-log.jsonl": [
+      {
+        "search_id": "synthetic-search-1",
+        "query": "same-operation keyed reuse",
+        "tool": "synthetic-fixture-inspection",
+        "at": "2026-10-13T08:00:00Z",
+        "filters": {
+          "corpus": "synthetic-only"
+        },
+        "regime": "counterexample",
+        "found_source_ids": [
+          "synthetic-cache-prior"
+        ],
+        "not_found": [
+          "No broader literature searched"
+        ],
+        "status": "ok",
+        "error": null
+      }
+    ],
+    "sources.jsonl": [
+      {
+        "source_id": "synthetic-cache-prior",
+        "title": "SYNTHETIC TEST ONLY: Memoization for repeated features",
+        "identifier": "synthetic:cache-prior",
+        "url": null,
+        "authors": [],
+        "version": "fixture-1",
+        "published_date": "2024-01-01",
+        "version_date": "2024-01-01",
+        "accessed_at": "2026-10-13T08:00:00Z",
+        "source_type": "synthetic",
+        "synthetic": true,
+        "existence": "verified",
+        "existence_method": "Supplied synthetic corpus, not a real paper.",
+        "reading_status": "full_text",
+        "read_scope": [
+          "Corpus paragraph 1"
+        ],
+        "limitations": [
+          "Synthetic exercise; no scientific evidence."
+        ]
+      }
+    ],
+    "claims.jsonl": [
+      {
+        "claim_id": "synthetic-claim-1",
+        "statement": "The supplied synthetic prior already implements keyed reuse of deterministic features.",
+        "kind": "fact",
+        "critical": true,
+        "evidence": [
+          {
+            "source_id": "synthetic-cache-prior",
+            "relation": "supports",
+            "locator": "Corpus paragraph 1",
+            "paraphrase": "The synthetic prior already stores deterministic features by input key.",
+            "scope": "Synthetic fixture only",
+            "requires_full_text": true,
+            "relevance": "verified",
+            "support": "verified",
+            "checked_by": "fixture-author",
+            "checked_at": "2026-10-13T08:00:00Z",
+            "method": "Manual fixture construction, not model evaluation."
+          }
+        ],
+        "conditions": [
+          "Fixed backbone and repeated identical inputs"
+        ],
+        "result_origin": "none",
+        "limitations": [
+          "Synthetic only"
+        ]
+      }
+    ],
+    "gaps.json": [
+      {
+        "gap_id": "synthetic-gap-1",
+        "axis": "Repeated computation",
+        "statement": "A proposed gap in repeated deterministic feature computation.",
+        "status": "rejected",
+        "claim_ids": [
+          "synthetic-claim-1"
+        ],
+        "near_miss_source_ids": [
+          "synthetic-cache-prior"
+        ],
+        "near_miss_explanation": "The sole supplied synthetic prior already describes the same mechanism.",
+        "importance": "Avoid redundant computation if it is actually present.",
+        "observable_resolution": "Compare identical input reuse and feature extraction calls.",
+        "diagnostic": "Inspect whether the existing implementation already caches features."
+      }
+    ],
+    "candidates.json": [
+      {
+        "candidate_id": "synthetic-candidate-1",
+        "gap_id": "synthetic-gap-1",
+        "title": "Renamed feature memory",
+        "intuition": "Store deterministic features and retrieve them by input key.",
+        "claim_ids": [
+          "synthetic-claim-1"
+        ],
+        "source_ids": [
+          "synthetic-cache-prior"
+        ],
+        "transfer": {
+          "source_problem": "Repeated database lookup",
+          "source_mechanism": "Keyed memoization",
+          "why_source_works": "Identical keys reuse immutable values",
+          "target_problem": "Repeated feature extraction",
+          "shared_structure": "Repeated deterministic mapping",
+          "required_changes": "No consequential adaptation identified",
+          "conditions": "Frozen backbone and stable input key",
+          "difference_from_nearest": "No established difference",
+          "failure_mode": "Prior already implements the same operation"
+        },
+        "revision": 0,
+        "status": "reject"
+      }
+    ],
+    "reviews.json": [
+      {
+        "review_id": "synthetic-review-1",
+        "candidate_id": "synthetic-candidate-1",
+        "revision": 0,
+        "verdict": "reject",
+        "tool_status": "ok",
+        "claim_ids": [
+          "synthetic-claim-1"
+        ],
+        "search_ids": [
+          "synthetic-search-1"
+        ],
+        "strongest_objection": "The proposed operation matches the supplied synthetic prior.",
+        "uncertainties": [
+          "No claim about the real literature."
+        ],
+        "next_discriminator": "A new proposal would need a substantive adaptation.",
+        "isolation": "same-context",
+        "history_inherited": true,
+        "input_artifacts": [
+          "brief.json",
+          "sources.jsonl",
+          "candidates.json"
+        ],
+        "input_hash": "synthetic-fixture-not-a-host-call",
+        "reviewer": "synthetic-fixture-author",
+        "non_obviousness": {
+          "status": "not_requested",
+          "frozen_file": null,
+          "frozen_sha256": null,
+          "reason": "Standard fixture"
+        }
+      }
+    ],
+    "proposal.json": {
+      "outcome": "no_recommendation",
+      "candidate_ids": [],
+      "title": "SYNTHETIC: no candidate recommended",
+      "problem": "Repeated feature extraction",
+      "failure_case": "",
+      "hypothesis": "",
+      "contribution": "",
+      "mechanism": "",
+      "implementation": "",
+      "claim_ids": [
+        "synthetic-claim-1"
+      ],
+      "experiments": [],
+      "limitations": [
+        "Synthetic fixture replay, not a research or model efficacy run."
+      ],
+      "next_diagnostics": [
+        "Inspect the real code and literature before asserting a gap."
+      ],
+      "results_status": "not_executed"
+    }
+  },
+  "run": {
+    "status": "stopped",
+    "stop_reason": "all_rejected"
+  }
+}

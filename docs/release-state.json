@@ -1,0 +1,17 @@
+{
+  "status": "PREPARED_FOR_PUBLICATION",
+  "maintainer_confirmations": {
+    "original_contributions_mit": true,
+    "public_handle_only": true,
+    "github_owner_and_remote": true,
+    "repository_visibility_public": true,
+    "publication_requested": true
+  },
+  "repository": "https://github.com/justinbelieber/grounded-ideation-skill",
+  "review": {
+    "automated_staged_scan": "see release-scan.md",
+    "agent_provenance_and_claims_review": "completed; see source-audit.md and release-scan.md",
+    "human_file_by_file_review": "not asserted",
+    "legal_clearance": "not asserted"
+  }
+}

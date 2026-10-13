@@ -1,0 +1,21 @@
+{
+  "case_id": "01-renamed-cache",
+  "split": "dev",
+  "synthetic": true,
+  "task": "audit",
+  "profile": "generic",
+  "prompt": "Assess whether renaming keyed reuse of deterministic frozen features is a contribution.",
+  "fixed_corpus": "SYNTHETIC: Prior A stores features under an input key and reuses them for identical inputs. The new idea performs the same operation with a new name.",
+  "limits": {
+    "searches": 6,
+    "reads": 4,
+    "candidates": 1,
+    "revisions": 1,
+    "concurrency": 1
+  },
+  "results": {
+    "A": "NOT_RUN",
+    "B": "NOT_RUN",
+    "C": "NOT_RUN"
+  }
+}

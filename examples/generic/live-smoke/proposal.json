@@ -1,0 +1,24 @@
+{
+  "outcome": "no_recommendation",
+  "candidate_ids": [],
+  "title": "Narrow live retrieval smoke: role sequence is already described",
+  "problem": "Audit whether a staged gap/transfer/proposal workflow alone is a new scientific ideation mechanism.",
+  "failure_case": "",
+  "hypothesis": "",
+  "contribution": "",
+  "mechanism": "",
+  "implementation": "",
+  "claim_ids": [
+    "prior-role-flow"
+  ],
+  "experiments": [],
+  "limitations": [
+    "Actual retrieval and primary-text reading in the authoring session; artifacts assembled afterward.",
+    "One known source, one targeted search, serial self-review. Not an independent efficacy or exhaustive novelty evaluation.",
+    "No new experiment or performance measurement executed."
+  ],
+  "next_diagnostics": [
+    "Specify a consequential operation beyond the role sequence and audit that difference."
+  ],
+  "results_status": "not_executed"
+}

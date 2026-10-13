@@ -1,0 +1,21 @@
+{
+  "case_id": "03-tool-failure",
+  "split": "dev",
+  "synthetic": true,
+  "task": "audit",
+  "profile": "generic",
+  "prompt": "Audit a proposed routing mechanism with unavailable retrieval.",
+  "fixed_corpus": "SYNTHETIC: Search returns a timeout. The supplied abstract says only that routing is studied; full text is inaccessible.",
+  "limits": {
+    "searches": 6,
+    "reads": 4,
+    "candidates": 1,
+    "revisions": 1,
+    "concurrency": 1
+  },
+  "results": {
+    "A": "NOT_RUN",
+    "B": "NOT_RUN",
+    "C": "NOT_RUN"
+  }
+}

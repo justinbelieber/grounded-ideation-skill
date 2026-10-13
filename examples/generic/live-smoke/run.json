@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "skill_version": "0.1.0",
+  "run_id": "live-smoke",
+  "created_at": "2026-10-13T08:38:41.172849Z",
+  "updated_at": "2026-10-13T08:39:10.459570Z",
+  "config": {
+    "task": "audit",
+    "depth": "quick",
+    "literature_mode": "live",
+    "profile": "generic",
+    "cutoff": null
+  },
+  "capabilities": {
+    "network_search": {
+      "status": "available",
+      "tool": "web.run",
+      "note": "One targeted search actually performed in the host."
+    },
+    "paper_reading": {
+      "status": "available",
+      "tool": "web.run open and exec_command urllib read",
+      "note": "ArXiv HTML sections inspected."
+    },
+    "local_files": {
+      "status": "available",
+      "tool": "research_artifacts.py",
+      "note": "CLI executed in this runtime."
+    },
+    "python": {
+      "status": "available",
+      "tool": "research_artifacts.py",
+      "note": "CLI executed in this runtime."
+    },
+    "repository_reading": {
+      "status": "available",
+      "tool": "exec_command urllib read",
+      "note": "Pinned public source audit in the same authoring session; not needed for the narrow claim."
+    },
+    "subagents": {
+      "status": "available",
+      "tool": "collaboration.spawn_agent",
+      "note": "Used for a separate synthetic forward test, not this serial audit."
+    },
+    "context_isolation": {
+      "status": "available",
+      "tool": "collaboration.spawn_agent fork_turns=none",
+      "note": "Separate developer test; not used as independent scientific review here."
+    }
+  },
+  "execution": "serial",
+  "budget": {
+    "limits": {
+      "searches": 6,
+      "reads": 4,
+      "candidates": 1,
+      "revisions": 1,
+      "concurrency": 1
+    },
+    "used": {
+      "searches": 1,
+      "reads": 1,
+      "candidates": 1,
+      "concurrency": 1
+    }
+  },
+  "stages": {
+    "define": "complete",
+    "evidence": "complete",
+    "gaps": "complete",
+    "candidates": "complete",
+    "review": "complete",
+    "proposal": "complete"
+  },
+  "status": "stopped",
+  "stop_reason": "all_rejected",
+  "hashes": {
+    "brief.json": "419bb1282612c63c909e5d39b502509ca7ebc605f07c1c3eed2efd00043bbecd",
+    "search-log.jsonl": "83813cdb5624371147956f78e727503f7038fdd8595fab8af891d0c88f9e2d77",
+    "sources.jsonl": "b9c32b630242551be005426d96ddc9a6a7e08c6354af8a96c442b4b9e8422eff",
+    "claims.jsonl": "74be8cec90b16be5d06143442bad01493f457dffc24d0d150792ebc5b7769936",
+    "gaps.json": "095cefac9178c98431ab79bf370ead8c52e0620fefda3ad76593a12aca30c96c",
+    "candidates.json": "15f7d2406ff01539b3e4d860e4d07f4261036e88b3ed0cc38536dcd3d5f223cf",
+    "reviews.json": "7677bd4f5fcb5c4373f67e4d76d7073dd8ca5adfdae24fc539bd3488ad8ee04f",
+    "proposal.json": "40ec6b4edc1f832ec40235a17a5f7f4d113b79725d9a7aee9e8eb97e9f00c4e9"
+  },
+  "control_hash": "74997328e01fa3b556f5249ef824a348d09c3706596b51e8ffe057d298eca4f1",
+  "decisions": [
+    {
+      "at": "2026-10-13T08:39:10.406210Z",
+      "summary": "Single-writer update: candidates.json, claims.jsonl, gaps.json, proposal.json, reviews.json, search-log.jsonl, sources.jsonl"
+    }
+  ]
+}

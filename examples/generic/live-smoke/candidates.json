@@ -1,0 +1,27 @@
+[
+  {
+    "candidate_id": "role-flow-rename",
+    "gap_id": "role-flow-gap",
+    "title": "Stage-based ideation sequence",
+    "intuition": "Use gap finding, mechanism transfer and proposal writing as a novel ideation mechanism.",
+    "claim_ids": [
+      "prior-role-flow"
+    ],
+    "source_ids": [
+      "ideascientist-v1"
+    ],
+    "revision": 0,
+    "status": "reject",
+    "transfer": {
+      "source_problem": "Scientific ideation",
+      "source_mechanism": "Coordinate gap, transfer and proposal roles",
+      "why_source_works": "Effectiveness is not asserted by this smoke audit",
+      "target_problem": "Scientific ideation",
+      "shared_structure": "Same task and operations",
+      "required_changes": "No substantial adaptation supplied",
+      "conditions": "The role sequence is the entire claimed contribution",
+      "difference_from_nearest": "None specified",
+      "failure_mode": "Already described in the nearest inspected work"
+    }
+  }
+]

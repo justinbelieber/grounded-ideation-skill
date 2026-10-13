@@ -1,0 +1,28 @@
+{
+  "problem": "SYNTHETIC: reduce repeated deterministic feature computation",
+  "challenge": [
+    "Check whether keyed feature reuse is already present"
+  ],
+  "domain": "machine learning",
+  "seed_sources": [],
+  "existing_ideas": [
+    "Rename keyed feature memoization as feature memory."
+  ],
+  "target_contribution": "A falsifiable mechanism or a justified diagnostic.",
+  "constraints": {
+    "data": [],
+    "code": [],
+    "hardware": null,
+    "time": null,
+    "other": [
+      "Use a bounded literature budget.",
+      "Synthetic developer smoke test only; not a scientific efficacy evaluation.",
+      "Use corpus.txt only; no network, other agents, external mutations, or other repository reading.",
+      "No hardware, data, implementation or time resources are established by the brief.",
+      "Success: a scoped audit decision with evidence links, including rejection."
+    ]
+  },
+  "excluded_directions": [],
+  "language": "en",
+  "output_directory": "runs"
+}

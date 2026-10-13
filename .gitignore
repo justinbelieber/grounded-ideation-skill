@@ -1,0 +1,36 @@
+# Private run artifacts and local state
+runs/
+work/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+*.log
+.env
+.env.*
+*.pem
+*.key
+*credentials*
+*secrets*
+private/
+private-profiles/
+*.local.json
+*.local.toml
+.DS_Store
+# Downloaded literature, databases, weights
+papers/
+*.pdf
+*.db
+*.sqlite*
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.zip
+*.tar*
+# Explicit public synthetic fixture exception
+!tests/fixtures/
+!tests/fixtures/**

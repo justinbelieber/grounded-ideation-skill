@@ -1,0 +1,35 @@
+[
+  {
+    "review_id": "role-review-1",
+    "candidate_id": "role-flow-rename",
+    "revision": 0,
+    "verdict": "reject",
+    "tool_status": "ok",
+    "claim_ids": [
+      "prior-role-flow"
+    ],
+    "search_ids": [
+      "live-search-1"
+    ],
+    "strongest_objection": "The claimed sequence matches the cited prior mechanism.",
+    "uncertainties": [
+      "Other proposed differences were not supplied."
+    ],
+    "next_discriminator": "Compare a concrete new operation with the prior method.",
+    "isolation": "same-context",
+    "history_inherited": true,
+    "input_artifacts": [
+      "brief.json",
+      "sources.jsonl",
+      "candidates.json"
+    ],
+    "input_hash": "ffa6f66ada2e043a331b342d9d6fe8e5c1937acff1da8ae7ee59e9e063d9ad5a",
+    "reviewer": "authoring-session serial reviewer",
+    "non_obviousness": {
+      "status": "not_requested",
+      "frozen_file": null,
+      "frozen_sha256": null,
+      "reason": "Quick targeted audit"
+    }
+  }
+]

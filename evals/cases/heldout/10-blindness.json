@@ -1,0 +1,21 @@
+{
+  "case_id": "10-blindness",
+  "split": "heldout",
+  "synthetic": true,
+  "task": "audit",
+  "profile": "generic",
+  "prompt": "Run a deep mechanism audit when the available evaluator inherits the proposal history.",
+  "fixed_corpus": "SYNTHETIC: Closest prior mechanisms are provided. The attempted proposal-blind derivation returns an empty list. No isolated context is available.",
+  "limits": {
+    "searches": 6,
+    "reads": 4,
+    "candidates": 1,
+    "revisions": 1,
+    "concurrency": 1
+  },
+  "results": {
+    "A": "NOT_RUN",
+    "B": "NOT_RUN",
+    "C": "NOT_RUN"
+  }
+}

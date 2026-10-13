@@ -1,0 +1,22 @@
+{
+  "problem": "Determine whether a claimed ML failure mode is real.",
+  "challenge": [
+    "Specify a measurable failure and its setting."
+  ],
+  "domain": "machine learning",
+  "seed_sources": [],
+  "existing_ideas": [],
+  "target_contribution": "A falsifiable mechanism or a justified diagnostic.",
+  "constraints": {
+    "data": [],
+    "code": [],
+    "hardware": null,
+    "time": null,
+    "other": [
+      "Use a bounded literature budget."
+    ]
+  },
+  "excluded_directions": [],
+  "language": "en",
+  "output_directory": "runs"
+}

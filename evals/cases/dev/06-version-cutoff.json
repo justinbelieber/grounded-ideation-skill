@@ -1,0 +1,21 @@
+{
+  "case_id": "06-version-cutoff",
+  "split": "dev",
+  "synthetic": true,
+  "task": "audit",
+  "profile": "generic",
+  "prompt": "Review a retrospective proposal with cutoff 2024-12-31.",
+  "fixed_corpus": "SYNTHETIC: Prior A v1 dated 2024-06-01 lacks the relevant mechanism. v2 dated 2025-02-01 introduces it. The candidate cites v2.",
+  "limits": {
+    "searches": 6,
+    "reads": 4,
+    "candidates": 1,
+    "revisions": 1,
+    "concurrency": 1
+  },
+  "results": {
+    "A": "NOT_RUN",
+    "B": "NOT_RUN",
+    "C": "NOT_RUN"
+  }
+}

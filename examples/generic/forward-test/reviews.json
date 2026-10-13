@@ -1,0 +1,37 @@
+[
+  {
+    "review_id": "review-feature-memory",
+    "candidate_id": "candidate-feature-memory",
+    "revision": 0,
+    "verdict": "reject",
+    "tool_status": "ok",
+    "claim_ids": [
+      "claim-prior-operation",
+      "claim-renaming",
+      "claim-no-evaluation"
+    ],
+    "search_ids": [
+      "search-keyed-reuse",
+      "search-counterexample"
+    ],
+    "strongest_objection": "The sole allowed source already describes exactly the keyed storage-and-reuse operation. The proposal changes terminology without a mechanism-level difference.",
+    "uncertainties": [
+      "No real literature was searched.",
+      "No code, workload, timing result or independent reviewer is available in this test."
+    ],
+    "next_discriminator": "Ask for an explicit added operation. If one is supplied later, test it against ordinary memoization with identical keys and capacity; otherwise stop this candidate.",
+    "isolation": "same-context",
+    "history_inherited": true,
+    "input_artifacts": [
+      "review-input.json"
+    ],
+    "input_hash": "5f18f396461f887e53742877e247acc90c53f2c6918e96ab3d06fda7bb58caae",
+    "reviewer": "Codex; serial same-context self-review using the supplied brief/corpus and two local rg searches",
+    "non_obviousness": {
+      "status": "not_requested",
+      "frozen_file": null,
+      "frozen_sha256": null,
+      "reason": "Quick audit; no isolated blind assessment or novelty score."
+    }
+  }
+]

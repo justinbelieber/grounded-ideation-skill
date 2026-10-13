@@ -1,0 +1,28 @@
+[
+  {
+    "candidate_id": "candidate-feature-memory",
+    "gap_id": "gap-keyed-reuse",
+    "title": "Rename keyed feature memoization as feature memory",
+    "intuition": "Preserved user hypothesis: a new label might represent a new contribution; the provided description supplies no changed operation.",
+    "claim_ids": [
+      "claim-prior-operation",
+      "claim-renaming"
+    ],
+    "source_ids": [
+      "synthetic-corpus-1"
+    ],
+    "transfer": {
+      "source_problem": "Repeated deterministic feature computation in the synthetic corpus.",
+      "source_mechanism": "Store fixed-encoder features under stable input keys and reuse them on repetitions.",
+      "why_source_works": "By the described operation, a cache hit returns the stored value; no empirical speed claim is supported.",
+      "target_problem": "SYNTHETIC: reduce repeated deterministic feature computation",
+      "shared_structure": "Same deterministic encoder and repeated input identity.",
+      "required_changes": "None specified beyond renaming.",
+      "conditions": "Stable correct keys and unchanged deterministic encoder; other implementation assumptions are unknown.",
+      "difference_from_nearest": "No consequential operational difference is supplied.",
+      "failure_mode": "The proposed contribution is an exact description-level match to the sole prior."
+    },
+    "revision": 0,
+    "status": "reject"
+  }
+]

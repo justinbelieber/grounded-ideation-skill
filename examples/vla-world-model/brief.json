@@ -1,0 +1,22 @@
+{
+  "problem": "SYNTHETIC: determine whether a frozen robot representation is used by the policy",
+  "challenge": [
+    "Separate linear readability from causal policy use"
+  ],
+  "domain": "robot manipulation",
+  "seed_sources": [],
+  "existing_ideas": [],
+  "target_contribution": "A falsifiable mechanism or a justified diagnostic.",
+  "constraints": {
+    "data": [],
+    "code": [],
+    "hardware": null,
+    "time": null,
+    "other": [
+      "Use a bounded literature budget."
+    ]
+  },
+  "excluded_directions": [],
+  "language": "zh-CN",
+  "output_directory": "runs"
+}
